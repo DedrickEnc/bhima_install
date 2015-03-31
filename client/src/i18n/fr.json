@@ -1,0 +1,34 @@
+{
+	"HOME" : {
+		"NOT_CONTINUE" : "Toutes les donnees sont parametree, la reinstallation n'est pas necessaire!",
+		"HOME" : "Bienvenue dans l'assistant diInstallation du SYSTEME BHIMA"
+	},
+
+	"COLUMNS" : {
+		"NOTHING"                    : "Pas d'enregistrement",
+		"ACTIONS"                    : "Actions"
+	},
+
+	"COUNTRY" : {
+		"ENGLISH_NAME"               : "Nom Ang",
+		"FRENCH_NAME"                : "Nom Fra",
+		"REGISTERED"                 : "Pays enregistres",
+		"CODE"                       : "Code"
+	},
+
+	"FORM" : {
+		"ADD"                        : "Ajouter",
+		"NEW_FORM"                   : "Nouveau"
+	},
+
+	"PROVINCE" : {
+		"REGISTER"                   : "Enregistrement Province",
+		"PROVINCE"                   : "Province",
+		"COUNTRY"                    : "Pays"
+
+	},
+
+	"SELECT" : {
+		"COUNTRY"                    : "Selectionner un pays"
+	}
+}

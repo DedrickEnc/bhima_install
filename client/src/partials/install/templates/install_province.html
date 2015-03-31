@@ -1,0 +1,38 @@
+<div class="row" ng-controller="bhima_installer.province">
+	<div class="col-xs-6" ng-switch="session.state">
+		<div ng-switch-default>
+			<form class="form-horizontal" name="addForm" novalidate>
+	            <fieldset>
+		            <legend>{{'PROVINCE.REGISTER' | translate}}</legend>
+		            <div class="form-group">
+		                <label class="col-xs-2"> {{'PROVINCE.COUNTRY' | translate}}</label>
+		                <div class="col-xs-10">
+		                  <select required class="form-bhima" name="countryname" id="countryID" ng-model="session.add.country_uuid" ng-options="cou.uuid as cou.country_en for cou in countries.data">
+		                    <option value="" disable="disabled">-- {{'SELECT.COUNTRY' | translate}} -- </option>
+		                  </select>
+		                </div>
+		            </div>
+
+		            <div class="form-group">
+		                <label class="col-xs-2 control-label">{{'PROVINCE.PROVINCE' | translate}}</label>
+		                <div class="col-xs-10">
+		                    <input class="form-bhima" ng-model="session.add.name" required>
+		                </div>
+		            </div>
+	            </fieldset>
+
+	            <button class="btn btn-default btn-success" ng-click="addProvince(session.add)" ng-disabled="addForm.$invalid">
+	              {{'FORM.ADD' | translate}}
+	            </button>
+	            <button class="btn btn-default btn-sm">
+	              {{'FORM.NEW_FORM' | translate}}
+	            </button>
+          	</form>
+    	</div>
+
+    	<div ng-switch-when="registering">
+    		<h2><a href="#/"><img src="assets/icon.png" width="100" height="100"></a></h2>
+    		<span><b>{{'PROVINCE.WAIT' | translate}}</b></span>
+    	</div>
+	</div>
+</div>

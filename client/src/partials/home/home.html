@@ -1,0 +1,22 @@
+<main>
+	<div class="panel panel-default" ng-if="!session.setted">
+		<div class="panel-heading">
+			Install
+		</div>
+		<div class="panel-body">
+		<div>
+			{{'HOME.HOME' | translate}}
+		</div>
+		<div class="pull-right">
+			<a ng-click="nextStep()"><span class="glyphicon glyphicon-chevron-right"></span></a>
+		</div>
+	</div>
+	</div>
+
+	<div ng-if="session.setted">
+		<div>
+			{{'HOME.NOT_CONTINUE' | translate}}
+		</div>
+	</div>
+</main>
+
