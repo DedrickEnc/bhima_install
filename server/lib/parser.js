@@ -378,7 +378,10 @@ exports.insert = function (table, data) {
       }
       if (values[key] === 'project_id') { project_id = sanitize(row[values[key]]); }
     }
+
     var concat = hasReference ? line.join(', ') : '(' + line.join(', ') + ')';
+
+    console.log(concat);
     expressions.push(concat);
   });
 
@@ -389,9 +392,16 @@ exports.insert = function (table, data) {
   });
 
   // compile the template
+  var dt = expressions.join(', '); //data
+  // console.log('avant', dt);
+  // dt.replace('$', '\'\$$$$\'');
+ //just in case
+  // console.log('apres', dt);
+
+
   sql = template.replace(/%T%/g, table)
           .replace('%V%', '(' + columns.join(', ') + ')')
-          .replace('%E%', expressions.join(', '))
+          .replace('%E%', dt)
           .replace('%project_id%', project_id);
 
   return sql;

@@ -4,6 +4,10 @@
 		"HOME" : "Bienvenue dans l'assistant diInstallation du SYSTEME BHIMA"
 	},
 
+	"INSTALL" : {
+		"TITLE"                      : "Installation"
+	},
+
 	"COLUMNS" : {
 		"NOTHING"                    : "Pas d'enregistrement",
 		"ACTIONS"                    : "Actions"
@@ -28,7 +32,33 @@
 
 	},
 
+	"SECTOR" : {
+		"REGISTER"                   : "Enregistrement Secteur",
+		"SECTOR"                     : "Secteur",
+		"PROVINCE"                   : "Province"
+
+	},
+
+	"VILLAGE" : {
+		"REGISTER"                   : "Enregistrement Village",
+		"VILLAGE"                    : "Village",
+		"SECTOR"                     : "Secteur"
+
+	},
+
+	"CURRENCY" : {
+		"REGISTER"                   : "Enregistrement Monnaie",
+		"NAME"                       : "Nom",
+		"SEPARATOR"                  : "Separateur",
+		"DECIMAL"                    : "Decimal",
+		"SYMBOL"                     : "Symbol",
+		"NOTE"                       : "Note"
+
+	},
+
 	"SELECT" : {
-		"COUNTRY"                    : "Selectionner un pays"
+		"COUNTRY"                    : "Selectionner un pays",
+		"PROVINCE"                   : "Selectionner une province",
+		"SECTOR"                     : "Selectionner un secteur"
 	}
 }

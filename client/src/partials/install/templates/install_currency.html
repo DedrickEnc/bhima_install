@@ -1,0 +1,55 @@
+
+<div class="row" ng-controller="bhima_installer.currency">
+	<div class="col-xs-6" ng-switch="session.state">
+		<div ng-switch-default>
+			<form class="form-horizontal" name="addForm" novalidate>
+          		<fieldset>
+            		<legend>{{ "CURRENCY.REGISTER" | translate }}</legend>
+
+		            <div class="form-group">
+		              <label class="control-label col-xs-2 required">{{ "CURRENCY.NAME" | translate }}</label>
+		              <div class="col-xs-10">
+		                <input name="name" ng-model="session.add.name" class="form-bhima" required>
+		              </div>
+		            </div>
+
+		            <div class="form-group">
+		              <label class="control-label col-xs-2 required">{{ "CURRENCY.SYMBOL" | translate }}</label>
+		              <div class="col-xs-10">
+		                <input name="symbol" ng-model="session.add.symbol" class="form-bhima" required>
+		              </div>
+		            </div>
+
+		            <div class="form-group">
+		              <label class="control-label col-xs-2 required">{{ "CURRENCY.SEPARATOR" | translate }}</label>
+		              <div class="col-xs-10">
+		                <input name="separator" ng-model="session.add.separator" class="form-bhima" required>
+		              </div>
+		            </div>
+
+		            <div class="form-group">
+		              <label class="control-label col-xs-2 required">{{ "CURRENCY.DECIMAL" | translate }}</label>
+		              <div class="col-xs-10">
+		                <input name="decimal" ng-model="session.add.decimal" class="form-bhima" required>
+		              </div>
+		            </div>
+
+		            <div class="form-group">
+		              <label class="control-label col-xs-2">{{ "CURRENCY.NOTE" | translate }}</label>
+		              <div class="col-xs-10">
+		                <textarea name="note" ng-model="session.add.note" class="form-control"></textarea>
+		              </div>
+		            </div>
+          		</fieldset>
+
+	          	<input class="btn btn-sm btn-success" type="submit" ng-click="addCurrency(session.add)" value="{{ 'FORM.ADD' | translate }}" ng-disabled="addForm.$invalid">
+	          	<input class="btn btn-sm btn-default" type="reset"  value="{{ 'FORM.RESET_FORM' | translate }}">
+        	</form>
+    	</div>
+
+    	<div ng-switch-when="registering">
+    		<h2><a href="#/"><img src="assets/icon.png" width="100" height="100"></a></h2>
+    		<span><b>{{'VILLAGE.WAIT' | translate}}</b></span>
+    	</div>
+	</div>
+</div>

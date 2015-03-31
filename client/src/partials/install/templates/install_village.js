@@ -1,5 +1,5 @@
 angular.module('bhima_installer.controllers')
-.controller('bhima_installer.sector', [
+.controller('bhima_installer.village', [
   '$scope',
   '$routeParams',
   '$q',
@@ -17,53 +17,53 @@ angular.module('bhima_installer.controllers')
         identifier : 'uuid',
         tables: {
           'sector' : {
-            columns : ['uuid','name', 'province_uuid']
-          }
-        }
-      }
-    };
-
-    dependencies.provinces = {
-      query : {
-        identifier : 'uuid',
-        tables: {
-          'province' : {
             columns : ['uuid','name']
           }
         }
       }
     };
 
-    function addSector (obj){
+    dependencies.villages = {
+      query : {
+        identifier : 'uuid',
+        tables: {
+          'village' : {
+            columns : ['uuid','name', 'sector_uuid']
+          }
+        }
+      }
+    };
+
+    function addVillage (obj){
       session.state = 'registering';
-      var sector = {
+      var village = {
         uuid : uuid(),
         name : obj.name,
-        province_uuid : obj.province_uuid
+        sector_uuid : obj.sector_uuid
       };
 
-      connect.post('sector', [sector])
+      connect.post('village', [village])
       .then(function (suc) {
         session.state = '';
-        session.global.behavior.nextStep('install/village');
+        session.global.behavior.nextStep('install/currency');
       })
       .catch(function (err) {
       });
     }
 
-    function manageSector (model) {
+    function manageVillage (model) {
       angular.extend($scope, model);
-      if(model.sectors.data.length) {session.global.behavior.nextStep('install/village');}
+      if(model.villages.data.length) {session.global.behavior.nextStep('install/currency');}
     }
 
     appstate.register('install.commonData', function (global){
       global.then(function (res){
         session.global = res;
         validate.process(dependencies)
-        .then(manageSector);
+        .then(manageVillage);
       });
     });
 
-    $scope.addSector = addSector;
+    $scope.addVillage = addVillage;
   }
 ]);

@@ -26,6 +26,18 @@ angular.module('bhima_installer.controllers')
       'province' : {
         url : '/partials/install/templates/install_province.html',
         title : 'Province'
+      },
+      'sector' : {
+        url : '/partials/install/templates/install_sector.html',
+        title : 'Secteur'
+      },
+      'village' : {
+        url : '/partials/install/templates/install_village.html',
+        title : 'Village'
+      },
+      'currency' : {
+        url : '/partials/install/templates/install_currency.html',
+        title : 'Monnaie'
       }
     };
 

@@ -1,36 +1,36 @@
 
-<div class="row" ng-controller="bhima_installer.sector">
+<div class="row" ng-controller="bhima_installer.village">
 	<div class="col-xs-6" ng-switch="session.state">
 		<div ng-switch-default>
 			<form class="form-horizontal" name="addForm" novalidate>
 
 	          	<fieldset>
-		            <legend>{{'SECTOR.REGISTER' | translate}}</legend>
+		            <legend>{{'VILLAGE.REGISTER' | translate}}</legend>
 		            <div class="form-group">
-		                <label class="col-xs-2"> {{'SECTOR.PROVINCE' | translate}}</label>
+		                <label class="col-xs-2"> {{'VILLAGE.SECTOR' | translate}}</label>
 		                <div class="col-xs-10">
-		                  <select required class="form-bhima" id="provinceID" ng-model="session.add.province_uuid" ng-options="pro.uuid as pro.name for pro in provinces.data">
-		                    <option value="" disable="disabled">-- {{'SELECT.PROVINCE' | translate}} -- </option>
+		                  <select required class="form-bhima" id="sectorID" ng-model="session.add.sector_uuid" ng-options="sec.uuid as sec.name for sec in sectors.data">
+		                    <option value="" disable="disabled">-- {{'SELECT.SECTOR' | translate}} -- </option>
 		                  </select>
 		                </div>
 		            </div>
 
 		            <div class="form-group">
-		                <label class="col-xs-2 control-label">{{'SECTOR.SECTOR' | translate}}</label>
+		                <label class="col-xs-2 control-label">{{'VILLAGE.VILLAGE' | translate}}</label>
 		                <div class="col-xs-10">
 		                    <input class="form-bhima" ng-model="session.add.name" required>
 		                </div>
 		            </div>
 	            </fieldset>
 
-	          	<input class="btn btn-default btn-success" ng-click="addSector(session.add)" ng-disabled="addForm.$invalid" type="submit" value="{{ 'FORM.ADD' | translate }}">
+	          	<input class="btn btn-default btn-success" ng-click="addVillage(session.add)" ng-disabled="addForm.$invalid" type="submit" value="{{ 'FORM.ADD' | translate }}">
 	          	<input class="btn btn-default btn-sm" type="reset" value="{{ 'FORM.NEW_FORM' | translate }}">
         	</form>
     	</div>
 
     	<div ng-switch-when="registering">
     		<h2><a href="#/"><img src="assets/icon.png" width="100" height="100"></a></h2>
-    		<span><b>{{'SECTOR.WAIT' | translate}}</b></span>
+    		<span><b>{{'VILLAGE.WAIT' | translate}}</b></span>
     	</div>
 	</div>
 </div>
